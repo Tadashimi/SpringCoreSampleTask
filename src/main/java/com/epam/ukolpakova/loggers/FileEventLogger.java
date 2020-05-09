@@ -17,14 +17,19 @@ public class FileEventLogger implements EventLogger {
 
     public void init() throws IOException {
         this.file = new File(fileName);
-        if (!file.canWrite()) {
-            throw new IOException("Cannot write to file");
+        if (!file.exists()) {
+            if (!file.createNewFile()) {
+                throw new IOException("Cannot create a new file");
+            }
+            if (!file.canWrite()) {
+                throw new IOException("Cannot write to file");
+            }
         }
-        ;
     }
 
     @Override
     public void logEvent(Event event) throws IOException {
         FileUtils.writeStringToFile(file, event.toString(), Charset.defaultCharset(), true);
+        FileUtils.writeStringToFile(file, "\n", Charset.defaultCharset(), true);
     }
 }
