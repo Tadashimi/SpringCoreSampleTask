@@ -15,7 +15,13 @@
 
     <bean id="app" class="com.epam.ukolpakova.App">
         <constructor-arg ref="client"/>
-        <constructor-arg ref="cacheFileEventLogger"/>
+        <constructor-arg ref="fileEventLogger"/>
+        <constructor-arg>
+            <map>
+                <entry key="INFO" value-ref="consoleEventLogger"/>
+                <entry key="ERROR" value-ref="combinedEventLogger"/>
+            </map>
+        </constructor-arg>
     </bean>
 
     <bean id="event" class="com.epam.ukolpakova.beans.Event" scope="prototype">

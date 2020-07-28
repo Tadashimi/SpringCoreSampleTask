@@ -16,4 +16,13 @@
         <constructor-arg value="5"/>
     </bean>
 
+    <bean id="combinedEventLogger" class="com.epam.ukolpakova.loggers.CombinedEventLogger">
+        <constructor-arg>
+            <list>
+                <ref bean="consoleEventLogger"/>
+                <ref bean="fileEventLogger"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
 </beans>
