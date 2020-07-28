@@ -10,6 +10,7 @@
     <bean id="client" class="com.epam.ukolpakova.beans.Client">
         <constructor-arg value="1"/>
         <constructor-arg value="John Connor"/>
+        <property name="greeting" value="Hello there!"/>
     </bean>
 
     <bean id="app" class="com.epam.ukolpakova.App">

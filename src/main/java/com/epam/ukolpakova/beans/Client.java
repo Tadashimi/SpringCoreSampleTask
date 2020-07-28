@@ -1,11 +1,19 @@
 package com.epam.ukolpakova.beans;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class Client {
-    String id;
-    String fullName;
+    private String id;
+    private String fullName;
+    private String greeting;
+
+    Client(String id, String fullName) {
+        this.id = id;
+        this.fullName = fullName;
+    }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
+    }
 }
