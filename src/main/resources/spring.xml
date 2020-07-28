@@ -30,9 +30,8 @@
         <constructor-arg value="log.txt"/>
     </bean>
 
-    <bean id="cacheFileEventLogger" class="com.epam.ukolpakova.loggers.CacheFileEventLogger" init-method="init"
-          destroy-method="destroy">
-        <constructor-arg value="log.txt"/>
+    <bean id="cacheFileEventLogger" class="com.epam.ukolpakova.loggers.CacheFileEventLogger"
+          destroy-method="destroy" parent="fileEventLogger">
         <constructor-arg value="5"/>
     </bean>
 
