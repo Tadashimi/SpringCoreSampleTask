@@ -5,12 +5,12 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
+    <import resource="loggers.xml"/>
+
     <bean id="client" class="com.epam.ukolpakova.beans.Client">
         <constructor-arg value="1"/>
         <constructor-arg value="John Connor"/>
     </bean>
-
-    <bean id="consoleEventLogger" class="com.epam.ukolpakova.loggers.ConsoleEventLogger"/>
 
     <bean id="app" class="com.epam.ukolpakova.App">
         <constructor-arg ref="client"/>
@@ -24,15 +24,6 @@
         <constructor-arg>
             <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
         </constructor-arg>
-    </bean>
-
-    <bean id="fileEventLogger" class="com.epam.ukolpakova.loggers.FileEventLogger" init-method="init">
-        <constructor-arg value="log.txt"/>
-    </bean>
-
-    <bean id="cacheFileEventLogger" class="com.epam.ukolpakova.loggers.CacheFileEventLogger"
-          destroy-method="destroy" parent="fileEventLogger">
-        <constructor-arg value="5"/>
     </bean>
 
 </beans>
