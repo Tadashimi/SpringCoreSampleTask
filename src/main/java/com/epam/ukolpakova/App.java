@@ -20,6 +20,7 @@ public class App {
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
         App app = (App) ctx.getBean("app");
+        printGreeting(app.client);
         for (int i = 0; i < 8; i++) {
             Event event = ctx.getBean("event", Event.class);
             event.setMsg("New event_" + i);
@@ -37,6 +38,12 @@ public class App {
             app.logEvent(event, eventType);
         }
         ctx.close();
+    }
+
+    private static void printGreeting(Client client) {
+        System.out.println("\nGREETING, MASTER!");
+        System.out.println("You are: " + client);
+        System.out.println("------------------\n");
     }
 
     private void logEvent(Event event, EventType eventType) throws IOException {
