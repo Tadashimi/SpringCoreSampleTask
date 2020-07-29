@@ -1,4 +1,4 @@
-package com.epam.ukolpakova.beans;
+package com.epam.ukolpakova.xmlconfigspring.beans;
 
 import lombok.Data;
 

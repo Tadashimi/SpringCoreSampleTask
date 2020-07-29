@@ -5,18 +5,18 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="consoleEventLogger" class="com.epam.ukolpakova.loggers.ConsoleEventLogger"/>
+    <bean id="consoleEventLogger" class="com.epam.ukolpakova.xmlconfigspring.loggers.ConsoleEventLogger"/>
 
-    <bean id="fileEventLogger" class="com.epam.ukolpakova.loggers.FileEventLogger" init-method="init">
+    <bean id="fileEventLogger" class="com.epam.ukolpakova.xmlconfigspring.loggers.FileEventLogger" init-method="init">
         <constructor-arg value="log.txt"/>
     </bean>
 
-    <bean id="cacheFileEventLogger" class="com.epam.ukolpakova.loggers.CacheFileEventLogger"
+    <bean id="cacheFileEventLogger" class="com.epam.ukolpakova.xmlconfigspring.loggers.CacheFileEventLogger"
           destroy-method="destroy" parent="fileEventLogger">
         <constructor-arg value="5"/>
     </bean>
 
-    <bean id="combinedEventLogger" class="com.epam.ukolpakova.loggers.CombinedEventLogger">
+    <bean id="combinedEventLogger" class="com.epam.ukolpakova.xmlconfigspring.loggers.CombinedEventLogger">
         <constructor-arg>
             <list>
                 <ref bean="consoleEventLogger"/>

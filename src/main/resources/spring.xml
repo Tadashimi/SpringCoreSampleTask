@@ -20,7 +20,7 @@
         <property name="ignoreResourceNotFound" value="true"/>
     </bean>
 
-    <bean id="client" class="com.epam.ukolpakova.beans.Client">
+    <bean id="client" class="com.epam.ukolpakova.xmlconfigspring.beans.Client">
         <constructor-arg value="${id}"/>
         <constructor-arg value="${name}"/>
         <property name="greeting" value="${greeting}"/>
@@ -31,13 +31,13 @@
         <entry key="ERROR" value-ref="combinedEventLogger"/>
     </util:map>
 
-    <bean id="app" class="com.epam.ukolpakova.App">
+    <bean id="app" class="com.epam.ukolpakova.xmlconfigspring.App">
         <constructor-arg ref="client"/>
         <constructor-arg ref="fileEventLogger"/>
         <constructor-arg ref="loggersMap"/>
     </bean>
 
-    <bean id="event" class="com.epam.ukolpakova.beans.Event" scope="prototype">
+    <bean id="event" class="com.epam.ukolpakova.xmlconfigspring.beans.Event" scope="prototype">
         <constructor-arg>
             <bean class="java.util.Date"/>
         </constructor-arg>

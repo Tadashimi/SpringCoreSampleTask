@@ -1,9 +1,9 @@
-package com.epam.ukolpakova;
+package com.epam.ukolpakova.xmlconfigspring;
 
-import com.epam.ukolpakova.beans.Client;
-import com.epam.ukolpakova.beans.Event;
-import com.epam.ukolpakova.enums.EventType;
-import com.epam.ukolpakova.loggers.EventLogger;
+import com.epam.ukolpakova.xmlconfigspring.beans.Client;
+import com.epam.ukolpakova.xmlconfigspring.beans.Event;
+import com.epam.ukolpakova.xmlconfigspring.enums.EventType;
+import com.epam.ukolpakova.xmlconfigspring.loggers.EventLogger;
 import lombok.AllArgsConstructor;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -42,8 +42,7 @@ public class App {
 
     private static void printGreeting(Client client) {
         System.out.println("\nGREETING, MASTER!");
-        System.out.println("You are: " + client);
-        System.out.println("------------------\n");
+        System.out.println("You are: " + client + "\n");
     }
 
     private void logEvent(Event event, EventType eventType) throws IOException {

@@ -1,6 +1,6 @@
-package com.epam.ukolpakova.loggers;
+package com.epam.ukolpakova.xmlconfigspring.loggers;
 
-import com.epam.ukolpakova.beans.Event;
+import com.epam.ukolpakova.xmlconfigspring.beans.Event;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;

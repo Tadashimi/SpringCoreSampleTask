@@ -1,6 +1,6 @@
-package com.epam.ukolpakova.loggers;
+package com.epam.ukolpakova.xmlconfigspring.loggers;
 
-import com.epam.ukolpakova.beans.Event;
+import com.epam.ukolpakova.xmlconfigspring.beans.Event;
 import lombok.AllArgsConstructor;
 
 import java.io.IOException;

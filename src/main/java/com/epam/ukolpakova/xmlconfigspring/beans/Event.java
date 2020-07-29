@@ -1,12 +1,14 @@
-package com.epam.ukolpakova.beans;
+package com.epam.ukolpakova.xmlconfigspring.beans;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Random;
 
+@Component
 public class Event {
     private int id;
     private Date date;
